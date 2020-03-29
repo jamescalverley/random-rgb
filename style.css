@@ -1,0 +1,14 @@
+h1 {
+    color: red;
+    font-size: 40px;
+}
+
+#rgb-circle {
+    align-self: center;
+    height: 300px;
+    width: 300px;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(100, 50, 200);
+    border-radius: 50%;
+}
