@@ -18,13 +18,14 @@ function randomRGB(){
 function changeColor( r, g, b ){
     let color = `rgb( ${r}, ${g}, ${b} )`;
     console.log(color)
-    document.querySelector('.rgb-circle').style.background = `${color}`;
+    // document.querySelector('.rgb-circle').style.background = `${color}`;
+    $('.rgb-circle').css('background-color', `${color}`);
 };
 
 setInterval(() => {randomRGB()}, 500);
 
 let count = 0;
-let numCircles = 200;
+let numCircles = 100;
 let circle = `<div class="rgb-circle"></div>`
 let displayCircles = [];
 
