@@ -15,28 +15,63 @@ function randomRGB(){
     let b = Math.floor(Math.random() * 255);
     return changeColor( r, g, b ); 
 };
-function changeColor( r, g, b ){
-    let color = `rgb( ${r}, ${g}, ${b} )`;
-    console.log(color)
-    // document.querySelector('.rgb-circle').style.background = `${color}`;
-    $('.rgb-circle').css('background-color', `${color}`);
+
+function randomRGB2(){
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+    return changeColor2( r, g, b ); 
 };
 
-setInterval(() => {randomRGB()}, 500);
+function changeColor( r, g, b ){
+    let color = `rgb( ${r}, ${g}, ${b} )`;
+    console.log(color);
+    // document.querySelector('.rgb-circle').style.background = `${color}`;
+    $('.rgb-circle').css('background-color', `${color}`);
+    
+};
+
+function changeColor2( r, g, b ){
+    let color = `rgb( ${r}, ${g}, ${b} )`;
+    console.log(color);
+    // document.querySelector('.rgb-circle').style.background = `${color}`;
+    $('.rgb-circle2').css('background-color', `${color}`);
+   
+};
+
+function runRandoms(){
+    randomRGB();
+    randomRGB2();
+};
+
+setInterval(() => {runRandoms()}, 200);
 
 let count = 0;
-let numCircles = 100;
-let circle = `<div class="rgb-circle"></div>`
+let numCircles = 40;
+let circle = `<div class="rgb-circle"></div>`;
+let circle2 = `<div class="rgb-circle2"></div>`;
 let displayCircles = [];
+let displayCircles2 = [];
+
 
 while( count < numCircles){
     count++
     console.log("counting", count);
     displayCircles.push(circle);
-} 
-console.log(displayCircles)
+    console.log("counting2", count);
+    displayCircles2.push(circle2);
+}; 
 
-$('#rgb-wrapper').html(displayCircles);
+
+//! write a for each loop and append the changeColor function
+//! combine random rgb and change color functions into one 
+
+let allCircles = displayCircles + displayCircles2;
+console.log(allCircles);
+
+//$('#rgb-wrapper').html(displayCircles);
+$('#rgb-wrapper').html(allCircles);
+
 
 
 
